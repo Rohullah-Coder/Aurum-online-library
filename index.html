@@ -1,0 +1,326 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="w-full h-screen flex bg-[#1a1a1a]">
+      <nav
+        class="fixed w-full flex justify-between p-2 items-center backdrop-blur-md text-white/70 bg-[#1a1a1a]/90 z-40">
+        <div class="flex text-center items-center select-none">
+          <img src="./media/logo png.png" class="h-[60px] w-[80px]" />
+          <p class="text-xl font-[monthera] text-white/70">
+            <span class="text-[#D4af37]">Aurum </span>Library
+          </p>
+        </div>
+        <ul class="flex gap-6 text-md h-full p-2 text-white/70">
+          <li
+            class="text-[#D4af37] after:content-'' after:w-full after:h-[1px] after:block after:bg-[#D4af37]">
+            <a href="#">Home</a>
+          </li>
+          <li
+            class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
+            <a href="#">About Us</a>
+          </li>
+          <li
+            class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
+            <a href="#">Catwgories</a>
+          </li>
+          <li
+            class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
+            <a href="#">Authors</a>
+          </li>
+          <li
+            class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
+            <a href="#">All Books</a>
+          </li>
+          <li
+            class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
+            <a href="./htmls/contact.html">Contact</a>
+          </li>
+        </ul>
+        <div class="flex gap-4 justify-center items-center text-xl">
+          <div class="relative">
+            <i
+              class="fas fa-cart-shopping cursor-pointer hover:text-[#D4af37] transition-all text-2xl"></i>
+            <p
+              id="cartnum"
+              class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[30%] translate-x-[-50%] translate-y-[-50%] select-none">
+              0
+            </p>
+          </div>
+          <div class="xl:hidden">
+            <i class="fas fa-bars cursor-pointer hover:text-[#D4af37] transition-all"></i>
+          </div>
+          <i class="fa-regular fa-sun cursor-pointer hover:text-[#D4af37] transition-all"></i>
+        </div>
+      </nav>
+      <!-- hero section -->
+      <section class="flex justify-between p-32 w-full h-full relative">
+        <div class="w-full h-full flex flex-col gap-8 pt-16 text-white/60 appeartext">
+          <h1 class="text-4xl font-[garakdine] font-bold">
+            Wellcome to <span class="text-[#D4af37] font-[mollani] font-normal">Aurum</span> library
+          </h1>
+          <p class="max-w-[70%] leading-8 text-lg font-[garadine]">
+            Aurum Library is an online knowledge platform providing digital books, research
+            articles, and learning resources. It offers easy access to e-books, online databases,
+            study tools, and virtual workshops, supporting self-learning, research, and education
+            for users anytime, anywhere.
+          </p>
+          <div class="flex gap-10">
+            <a href="" class="px-4 py-2 border rounded-full bg-white text-[#1a1a1a]"
+              >Request a book</a
+            >
+            <a href="" class="px-4 py-2 border border-[#D4af37] rounded-full text-[#D4af37]"
+              >Read More</a
+            >
+          </div>
+        </div>
+        <div class="w-[50vw] relative">
+          <img
+            src="./media/bookscover/beyond the ocean door.jpg"
+            class="absolute h-74 w-50 translate-x-42 translate-y-16 shadow-2xl shadow-[#D4af37]/40 hover:border-1 border-[#D4af37] transition-border ease-in-out hover:z-3 transition-all moveleft2 opacity-0" />
+          <img
+            src="./media/bookscover/dune book.png"
+            class="absolute h-90 w-60 translate-x-20 translate-y-8 shadow-md shadow-black hover:border-1 border-[#D4af37] transition-border ease-in-out hover:z-3 transition-all moveleft1 opacity-0" />
+          <img
+            src="./media/bookscover/paradx book.png"
+            class="absolute h-104 w-70 shadow-md shadow-black hover:border-1 border-[#D4af37] transition-border ease-in-out hover:z-3 transition-all moveleft opacity-0" />
+        </div>
+        <i
+          class="fas fa-arrow-down absolute bottom-20 left-1/2 text-[#D4af37] animate-bounce duration-700"></i>
+      </section>
+    </header>
+    <main>
+      <!-- premium books -->
+      <section class="w-full h-screen bg-[#D4af37] flex items-center flex-col p-24">
+        <h1 class="font-[monthera] text-2xl">Our premium Books</h1>
+        <div class="flex justify-between p-2 items-center w-full h-full gap-10 backdrop-blur-xl">
+          <button
+            class="p-2 flex justify-center items-center border rounded-full hover:bg-[#1a1a1a] hover:text-[#D4af37] transition-all cursor-pointer text-[#1a1a1a] border-[#1a1a1a]">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <div
+            class="h-full p-2 flex overflow-x-hidden w-[70vw] backdrop-brightness-100 backdrop-blur-md rounded">
+            <article class="w-full h-full flex gap-4 justify-center p-2 backdrop-blur-md">
+              <span class="flex flex-col h-full w-full gap-4 p-4">
+                <h1 class="text-2xl font-[moralana]">The Power Of Habbits</h1>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur sapiente
+                  rerum impedit in quibusdam, facilis saepe odio blanditiis cupiditate provident!
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. A officia eligendi
+                  dolorum aspernatur voluptas reprehenderit pariatur quis tenetur ad ex, obcaecati
+                  doloribus? Iure voluptatibus, nisi dignissimos accusamus at maxime molestiae,
+                  ullam commodi accusantium dicta voluptate odit, quae magni sapiente laborum. ....
+                </p>
+                <button
+                  class="px-4 py-2 border max-w-max rounded-full text-lg hover:bg-[#1a1a1a] hover:text-[#D4af37] transition-all cursor-pointer">
+                  <i class="fas fa-cart-shopping"></i> add to cart
+                </button>
+              </span>
+
+              <img
+                src="./media/bookscover/habits book.jpg"
+                class="w-[350px] h-full shadow-black shadow-md hover:scale-90 transition-all" />
+            </article>
+          </div>
+          <button
+            class="p-2 flex justify-center items-center border rounded-full hover:bg-[#1a1a1a] hover:text-[#D4af37] transition-all cursor-pointer text-[#1a1a1a] border-[#1a1a1a]">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </section>
+      <!-- semi catagory section -->
+      <section class="min-h-[50vh] bg-[#1a1a1a] p-16 flex flex-col gap-6">
+        <h1
+          class="text-[#D4af37] border px-12 py-2 w-max rounded-tl-2xl rounded-br-2xl text-2xl font-[monthera] m-auto">
+          Explore Our Books
+        </h1>
+        <div class="flex flex-col gap-10">
+          <!-- story books short list -->
+          <article class="flex flex-col gap-4 text-[#D4af37]">
+            <h1 class="text-xl">Novels and story books</h1>
+            <div class="w-full h-60 flex gap-4">
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <a
+                href="#"
+                class="w-full flex justify-center gap-2 items-center text-xl p-2 hover:border transition-all rounded flex-col"
+                ><i class="fas fa-arrow-right text-4xl"></i> More Books</a
+              >
+            </div>
+          </article>
+          <!-- scince book short list -->
+          <article class="flex flex-col gap-4 text-[#D4af37]">
+            <h1 class="text-xl">Novels and story books</h1>
+            <div class="w-full h-60 flex gap-4">
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <a
+                href="#"
+                class="w-full flex justify-center gap-2 items-center text-xl p-2 hover:border transition-all rounded flex-col"
+                ><i class="fas fa-arrow-right text-4xl"></i> More Books</a
+              >
+            </div>
+          </article>
+          <!-- researches short list -->
+          <article class="flex flex-col gap-4 text-[#D4af37]">
+            <h1 class="text-xl">Novels and story books</h1>
+            <div class="w-full h-60 flex gap-4">
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <img
+                src="./media/bookscover/jungle book.jpg"
+                class="w-full h-full hover:scale-95 transition-all rounded" />
+              <a
+                href="#"
+                class="w-full flex justify-center gap-2 items-center text-xl p-2 hover:border transition-all rounded flex-col"
+                ><i class="fas fa-arrow-right text-4xl"></i> More Books</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- authors section -->
+      <section class="flex flex-col p-12 bg-[#1a1a1a] min-h-[50vh]">
+        <div class="flex gap-12 w-full h-full p-8">
+          <article
+            class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
+            <img src="./media/bookscover/author.jpg" class="w-1/2 rounded-full" />
+            <h1>Herly crownton</h1>
+            <p>
+              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
+              Divoluptatem praesentium?
+            </p>
+          </article>
+          <article
+            class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
+            <img src="./media/bookscover/author.jpg" class="w-1/2 rounded-full" />
+            <h1>Herly crownton</h1>
+            <p>
+              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
+              Divoluptatem praesentium?
+            </p>
+          </article>
+          <article
+            class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
+            <img src="./media/bookscover/author.jpg" class="w-1/2 rounded-full" />
+            <h1>Herly crownton</h1>
+            <p>
+              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
+              Divoluptatem praesentium?
+            </p>
+          </article>
+          <article
+            class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
+            <img src="./media/bookscover/author.jpg" class="w-1/2 rounded-full" />
+            <h1>Herly crownton</h1>
+            <p>
+              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
+              Divoluptatem praesentium?
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="w-full flex flex-col gap-4 text-white/90 p-4 lowback">
+      <div class="w-full flex justify-between p-2 gap-16">
+        <article class="w-max flex">
+          <ul class="flex gap-1 flex-col text-xs h-full p-2 text-white/70 max-w-max">
+            <li class="">
+              <a href="#">Home</a>
+            </li>
+            <li class="">
+              <a href="#">About us</a>
+            </li>
+            <li class="">
+              <a href="#">categories</a>
+            </li>
+          </ul>
+          <ul class="flex gap-1 flex-col text-xs h-full p-2 text-white/70 max-w-max">
+            <li class="">
+              <a href="#">Authors</a>
+            </li>
+            <li class="">
+              <a href="#">Books</a>
+            </li>
+            <li class="">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </article>
+
+        <article class="w-full">
+          <h1>Aurum Library recomendation</h1>
+          <p class="max-w-[60vw] text-xs">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore reiciendis, possimus
+            molestias perferendis numquam quo libero est, sapiente eveniet accusamus cum ipsum Et
+            saepe dicta do doloribus tenetur.
+          </p>
+        </article>
+        <article class="w-full text-xs">
+          <ul>
+            <li><a href="">Best books</a></li>
+            <li><a href="">Shorts Novels stories</a></li>
+            <li><a href="">moticational sentences</a></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="w-full flex justify-between border-t p-2 text-xs">
+        <article>
+          <p>&copy; All rights reserved by the owner</p>
+        </article>
+        <article>
+          <p>Designed by Aurum</p>
+        </article>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
