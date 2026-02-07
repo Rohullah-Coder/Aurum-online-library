@@ -49,7 +49,8 @@
         <div class="flex gap-4 justify-center items-center text-xl">
           <div class="relative">
             <i
-              class="fas fa-cart-shopping cursor-pointer hover:text-[#D4af37] transition-all text-2xl"></i>
+              class="fas fa-cart-shopping cursor-pointer hover:text-[#D4af37] transition-all text-2xl"
+              id="carticon"></i>
             <p
               id="cartnum"
               class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[30%] translate-x-[-50%] translate-y-[-50%] select-none">
@@ -62,6 +63,32 @@
           <i class="fa-regular fa-sun cursor-pointer hover:text-[#D4af37] transition-all"></i>
         </div>
       </nav>
+      <!-- cart quantity -->
+      <article
+        id="cartpage"
+        class="absolute ease transition-all top-16 rounded backdrop-blur-md bg-white/40 right-4 w-50 h-0 z-50 p-4 text-center flex-col gap-2 hidden">
+        <h1 class="w-full text-center text-sm text-white">
+          Your Shopping Cart (
+          <span id="cartnum2" class="text-green-500">0</span>
+          )
+        </h1>
+        <!-- shopping cart container -->
+        <div
+          class="w-full h-full border flex gap-2 overflow-y-auto flex-wrap text-sm items-center justify-center">
+          <div class="flex flex-col gap-1 items-center">
+            <img src="./media/logo png.png" alt="" />
+            <a href="">book name</a>
+            <ins>$12.5</ins>
+            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+          <div class="flex flex-col gap-1 items-center">
+            <img src="./media/logo png.png" alt="" />
+            <a href="">book name</a>
+            <ins>$12.5</ins>
+            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
+          </div>
+        </div>
+      </article>
       <!-- hero section -->
       <section class="flex justify-between p-32 w-full h-full relative">
         <div class="w-full h-full flex flex-col gap-8 pt-16 text-white/60 appeartext">
