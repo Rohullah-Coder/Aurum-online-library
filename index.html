@@ -31,7 +31,7 @@
           </li>
           <li
             class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
-            <a href="#">Catwgories</a>
+            <a href="#">Categories</a>
           </li>
           <li
             class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
@@ -53,41 +53,37 @@
               id="carticon"></i>
             <p
               id="cartnum"
-              class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[30%] translate-x-[-50%] translate-y-[-50%] select-none">
+              class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[27%] translate-x-[-50%] translate-y-[-50%] select-none">
               0
             </p>
           </div>
-          <div class="xl:hidden">
+          <div class="md:hidden">
             <i class="fas fa-bars cursor-pointer hover:text-[#D4af37] transition-all"></i>
           </div>
-          <i class="fa-regular fa-sun cursor-pointer hover:text-[#D4af37] transition-all"></i>
+          <i
+            class="fa-regular fa-moon cursor-pointer hover:text-[#D4af37] transition-all"
+            id="moodBtn"
+            onclick="changeMood()"></i>
         </div>
       </nav>
       <!-- cart quantity -->
       <article
         id="cartpage"
-        class="absolute ease transition-all top-16 rounded backdrop-blur-md bg-white/40 right-4 w-50 h-0 z-50 p-4 text-center flex-col gap-2 hidden">
-        <h1 class="w-full text-center text-sm text-white">
-          Your Shopping Cart (
-          <span id="cartnum2" class="text-green-500">0</span>
-          )
-        </h1>
-        <!-- shopping cart container -->
-        <div
-          class="w-full h-full border flex gap-2 overflow-y-auto flex-wrap text-sm items-center justify-center">
-          <div class="flex flex-col gap-1 items-center">
-            <img src="./media/logo png.png" alt="" />
-            <a href="">book name</a>
-            <ins>$12.5</ins>
-            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
-          </div>
-          <div class="flex flex-col gap-1 items-center">
-            <img src="./media/logo png.png" alt="" />
-            <a href="">book name</a>
-            <ins>$12.5</ins>
-            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
-          </div>
+        class="fixed ease transition-all top-16 rounded backdrop-blur-sm bg-black/80 right-4 w-80 h-[70%] z-50 p-4 text-center flex-col gap-2 hidden">
+        <div class="flex items-center gap-2">
+          <button
+            class="border w-full flex items-center gap-2 justify-start border-transparent hover:border-red-500 rounded-md transition-all cursor-pointer text-red-500 p-1 max-w-max"
+            onclick="cleanCart(0)">
+            <i class="fas fa-trash"></i>
+            Remove All
+          </button>
+          <h1 class="w-full text-center text-sm text-white border-l">
+            You have (
+            <span id="cartnum2" class="text-green-500 select-none">0</span>
+            ) <span id="itemItems"></span>
+          </h1>
         </div>
+        <!-- shopping cart container -->
       </article>
       <!-- hero section -->
       <section class="flex justify-between p-32 w-full h-full relative">
@@ -145,7 +141,7 @@
                   nihil reiciendis pariatur, obcaecati excepturi alias est nemo sequi eligendi. Quia
                   ea non ratione iste quod, in nulla.
                 </p>
-                <button class="p-1 px-4 border rounded-full max-w-max">
+                <button class="p-1 px-4 border rounded-full max-w-max" onclick="addtocart(1)">
                   <i class="fas fa-cart-shopping"></i> Add to Cart
                 </button>
               </div>
@@ -161,7 +157,7 @@
                   nihil reiciendis pariatur, obcaecati excepturi alias est nemo sequi eligendi. Quia
                   ea non ratione iste quod, in nulla.
                 </p>
-                <button class="p-1 px-4 border rounded-full max-w-max">
+                <button class="p-1 px-4 border rounded-full max-w-max" onclick="addtocart(1)">
                   <i class="fas fa-cart-shopping"></i> Add to Cart
                 </button>
               </div>
@@ -179,7 +175,7 @@
                   nihil reiciendis pariatur, obcaecati excepturi alias est nemo sequi eligendi. Quia
                   ea non ratione iste quod, in nulla.
                 </p>
-                <button class="p-1 px-4 border rounded-full max-w-max">
+                <button class="p-1 px-4 border rounded-full max-w-max" onclick="addtocart(1)">
                   <i class="fas fa-cart-shopping"></i> Add to Cart
                 </button>
               </div>
@@ -195,7 +191,7 @@
                   nihil reiciendis pariatur, obcaecati excepturi alias est nemo sequi eligendi. Quia
                   ea non ratione iste quod, in nulla.
                 </p>
-                <button class="p-1 px-4 border rounded-full max-w-max">
+                <button class="p-1 px-4 border rounded-full max-w-max" onclick="addtocart(1)">
                   <i class="fas fa-cart-shopping"></i> Add to Cart
                 </button>
               </div>
@@ -350,37 +346,41 @@
           <article
             class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
             <img src="./media/Auhors/paulo coelho.jpg" class="w-1/2 rounded-full" />
-            <h1>Paulo Coelho</h1>
-            <p>
-              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
-              Divoluptatem praesentium?
+            <h1 class="text-[#D4af37]">Paulo Coelho</h1>
+            <p class="text-sm">
+              Paulo Coelho is a Brazilian author best known for The Alchemist, writing inspirational
+              novels about spirituality, self-discovery, destiny, and the pursuit of personal
+              dreams.
             </p>
           </article>
           <article
             class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
             <img src="./media/Auhors/robert kiyosaki.jpg" class="w-1/2 rounded-full" />
-            <h1>Robert Kiyosaki</h1>
-            <p>
-              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
-              Divoluptatem praesentium?
+            <h1 class="text-[#D4af37]">Robert Kiyosaki</h1>
+            <p class="text-sm">
+              Robert Kiyosaki is an American entrepreneur and author of Rich Dad Poor Dad, known for
+              teaching financial literacy, investing, and mindset principles for building wealth and
+              financial independence.
             </p>
           </article>
           <article
             class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
             <img src="./media/Auhors/stephan king.jpg" class="w-1/2 rounded-full" />
-            <h1>Stephan King</h1>
-            <p>
-              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
-              Divoluptatem praesentium?
+            <h1 class="text-[#D4af37]">Stephan King</h1>
+            <p class="text-sm">
+              Stephen King is an American author famous for horror, suspense, and supernatural
+              fiction, writing bestselling novels like It, The Shining, and Carrie, influencing
+              modern popular literature worldwide.
             </p>
           </article>
           <article
             class="text-white/80 flex flex-col gap-4 w-full items-center justify-center text-center border border-transparent hover:border-[#D4af37] rounded transition-all p-4 hover:shadow-md shadow-amber-300">
             <img src="./media/Auhors/willaim shakespare.jpg" class="w-1/2 rounded-full" />
-            <h1>William Skakespare</h1>
-            <p>
-              Lorem ipsum dolor sit amet coit amet coit amet consectetur adipisicing elit.
-              Divoluptatem praesentium?
+            <h1 class="text-[#D4af37]">William Skakespare</h1>
+            <p class="text-sm">
+              William Shakespeare was an English playwright and poet, widely regarded as the
+              greatest writer in English literature, famous for plays like Hamlet, Romeo and Juliet,
+              and Macbeth.
             </p>
           </article>
         </div>

@@ -32,7 +32,7 @@
           </li>
           <li
             class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
-            <a href="#">Catwgories</a>
+            <a href="#">Categories</a>
           </li>
           <li
             class="hover:text-[#D4af37] hover:after:w-full after:content-'' after:w-0 after:h-[1px] after:block after:bg-[#D4af37] transition-all after:transition-all after:duration-700">
@@ -54,42 +54,18 @@
               class="fas fa-cart-shopping cursor-pointer hover:text-[#D4af37] transition-all text-2xl"></i>
             <p
               id="cartnum"
-              class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[30%] translate-x-[-50%] translate-y-[-50%] select-none">
+              class="text-[#1a1a1a] absolute text-[11px] font-bold rounded-full z-3 left-1/2 top-[27%] translate-x-[-50%] translate-y-[-50%] select-none">
               0
             </p>
           </div>
-          <div class="xl:hidden">
+          <div class="md:hidden">
             <i class="fas fa-bars cursor-pointer hover:text-[#D4af37] transition-all"></i>
           </div>
-          <i class="fa-regular fa-sun cursor-pointer hover:text-[#D4af37] transition-all"></i>
+          <i class="fa-regular fa-moon cursor-pointer hover:text-[#D4af37] transition-all"></i>
         </div>
       </nav>
+
       <!--contact hero section -->
-      <article
-        id="cartpage"
-        class="absolute ease transition-all top-16 rounded backdrop-blur-md bg-white/40 right-4 w-50 h-0 z-50 p-4 text-center flex-col gap-2 hidden">
-        <h1 class="w-full text-center text-sm text-white">
-          Your Shopping Cart (
-          <span id="cartnum2" class="text-green-500">0</span>
-          )
-        </h1>
-        <!-- shopping cart container -->
-        <div
-          class="w-full h-full border flex gap-2 overflow-y-auto flex-wrap text-sm items-center justify-center">
-          <div class="flex flex-col gap-1 items-center">
-            <img src="./media/logo png.png" alt="" />
-            <a href="">book name</a>
-            <ins>$12.5</ins>
-            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
-          </div>
-          <div class="flex flex-col gap-1 items-center">
-            <img src="./media/logo png.png" alt="" />
-            <a href="">book name</a>
-            <ins>$12.5</ins>
-            <button class="w-full bg-red-600 p-1 px-4"><i class="fas fa-trash"></i> Delete</button>
-          </div>
-        </div>
-      </article>
 
       <section class="py-34 px-68 flex w-screen h-screen justify-center items-center relative">
         <div class="relative w-full h-full">
@@ -269,10 +245,41 @@
         </div>
       </section>
     </header>
-    <main>
-      <!-- contact form -->
-    </main>
-
     <!-- js codes -->
+    <script>
+      const contactform = document.querySelector("#contactform");
+      const requestform = document.querySelector("#requestform");
+      const feedform = document.querySelector("#feedform");
+      const contactbtn = document.querySelector("#contactbtn");
+      const requestbtn = document.querySelector("#requestbtn");
+      const feedbtn = document.querySelector("#feedbtn");
+
+      function contactformopen() {
+        contactform.style.display = "flex";
+        requestform.style.display = "none";
+        feedform.style.display = "none";
+        contactbtn.style.borderBottom = "3px solid #D4af37";
+        requestbtn.style.borderBottom = "1px solid  #D4af37";
+        feedbtn.style.borderBottom = "1px solid  #D4af37";
+      }
+
+      function requestformopen() {
+        contactform.style.display = "none";
+        requestform.style.display = "flex";
+        feedform.style.display = "none";
+        requestbtn.style.borderBottom = "3px solid #D4af37";
+        contactbtn.style.borderBottom = "1px solid  #D4af37";
+        feedbtn.style.borderBottom = "1px solid  #D4af37";
+      }
+
+      function feedbackformopen() {
+        contactform.style.display = "none";
+        requestform.style.display = "none";
+        feedform.style.display = "flex";
+        feedbtn.style.borderBottom = "3px solid #D4af37";
+        requestbtn.style.borderBottom = "1px solid  #D4af37";
+        contactbtn.style.borderBottom = "1px solid  #D4af37";
+      }
+    </script>
   </body>
 </html>
